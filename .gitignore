@@ -1,0 +1,10 @@
+/.buildpath
+/db/
+/.env
+/.idea
+/off
+/.project
+/.settings/
+/test*.php
+/todo.txt
+/vendor/
