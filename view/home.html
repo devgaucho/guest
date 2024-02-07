@@ -1,1 +1,12 @@
-hello {{name}}
+<div class="container">
+	<div class="row">
+		<div class="col3"></div>
+		<div class="col6">
+			<form action="{{SITE_URL}}/messages" class="vertical" method="post">
+				<label for="message">Mensagem:</label>
+				<textarea id="message" name="message"></textarea>
+				<button type="submit">Enviar</button>
+			</form>
+		</div>
+	</div>
+</div>
