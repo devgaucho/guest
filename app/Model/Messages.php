@@ -16,7 +16,6 @@ class Messages extends Gaucho
     function create($message)
     {
         $message['created_at'] = time();
-        // TODO adicionar created_at_h
         $this->db->insert('messages', $message);
         return $this->db->id();
     }

@@ -24,7 +24,6 @@ class Messages extends Gaucho
     function POST()
     {
         $MessagesModel = new MessagesModel();
-        // TODO validar a mensagem no backend
         $message = [
             'message' => $_POST['message']
         ];
