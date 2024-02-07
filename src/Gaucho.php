@@ -10,7 +10,7 @@ use mysqli;
 
 class Gaucho
 {
-
+    
     function chaplin($name, $data = [], $print = true)
     {
         $Chaplin = new Chaplin();
@@ -199,7 +199,7 @@ class Gaucho
         header('Content-Type:application/json');
         die(json_encode($mix, JSON_PRETTY_PRINT));
     }
-
+    
     function mig($id = false)
     {
         $prefix = 'DB' . $id;
@@ -217,8 +217,9 @@ class Gaucho
         $Mig->mig();
     }
 
-    function redirect($url){
-        header('Location: '.$url);
+    function redirect($url)
+    {
+        header('Location: ' . $url);
         die();
     }
 
