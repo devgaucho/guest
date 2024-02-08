@@ -1,7 +1,7 @@
 <?php
 namespace App\Model;
 use Gaucho\Gaucho;
-class Messages extends Gaucho{
+class MessagesModel extends Gaucho{
     var $db;
     function __construct(){
         $this->db=$this->db();
