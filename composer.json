@@ -9,11 +9,12 @@
 		"spa",
 		"gaucho"
 	],
-	"authors" : [{
+	"authors" : [
+		{
 		"name" : "gaucho.dev",
 		"email" : "119246170+devgaucho@users.noreply.github.com"
-	}
-],
+		}
+	],
 	"require" : {
 		"catfan/medoo" : "^2.1",
 		"php" : "^8.1",
