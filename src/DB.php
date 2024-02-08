@@ -1,6 +1,7 @@
 <?php
 namespace Gaucho;
 use Medoo\Medoo;
+use Gaucho\Mig;
 use mysqli;
 class DB{
 	function createSQLiteDB($id){
@@ -97,4 +98,20 @@ class DB{
 			return $conn;
 		}
 	}	
+	function mig($id=false){
+		$DB=new DB();
+		$prefix='DB'.$id;
+		$dbType=@$_ENV[$prefix.'_TYPE'];
+		if($dbType=='mysql'){
+			$DB->createMysqlDB($id);
+		}
+		if($dbType=='sqlite'){
+			$DB->createSQLiteDB($id);
+		}
+		$db=$DB->db($id);
+		$pdo=$db->pdo;
+		$tableDirectory=glob(ROOT.'/table');
+		$Mig=new Mig($pdo,$tableDirectory,$dbType);
+		$Mig->mig();
+	}
 }

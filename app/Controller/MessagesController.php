@@ -1,8 +1,8 @@
 <?php
 namespace App\Controller;
-use Gaucho\Gaucho;
+use Gaucho\Controller;
 use App\Model\MessagesModel;
-class MessagesController extends Gaucho{
+class MessagesController extends Controller{
     function GET(){
         $MessagesModel=new MessagesModel();
         $id=$this->dir(2);

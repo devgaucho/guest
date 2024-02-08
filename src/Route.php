@@ -1,7 +1,7 @@
 <?php
 namespace Gaucho;
-use Gaucho\Gaucho;
-class Route extends Gaucho{
+use Gaucho\Controller;
+class Route extends Controller{
 	var $routes;
 	function __construct($filename){
 		if(file_exists($filename)){
@@ -64,6 +64,23 @@ class Route extends Gaucho{
 		}
 		return $method;
 	}
+	function getRotasEViews(){
+		$viewsList=glob(ROOT.'/view/*.html');
+		if(count($viewsList) > 0){
+			$rotas=[];
+			foreach ($viewsList as $view){
+				$filename=$view;
+				$viewName=@explode(
+					'.',basename($view)
+				)[0];
+				$str=file_get_contents($filename);
+				$rotas[$viewName]=$str;
+			}
+			return $rotas;
+		}else{
+			die('views not found');
+		}
+	}
 	function notFound(){
 		http_response_code(404);
 		if(isset($this->routes['404'])){
@@ -71,6 +88,25 @@ class Route extends Gaucho{
 			return $this->controller($rotaAtual);
 		}else{
 			die('not found');
+		}
+	}
+	function salvarRotasEViews($filename,$rotasEViews){
+		$data=json_encode($rotasEViews,JSON_PRETTY_PRINT);
+		$data='var rotas='.$data.';'.PHP_EOL;
+		$data.='var SITE_DOMAIN="'.$_ENV['SITE_DOMAIN'].'";';
+		$data.=PHP_EOL;
+		$data.='var SITE_NAME="'.$_ENV['SITE_NAME'].'";';
+		$data.=PHP_EOL;
+		$data.='var SITE_URL="'.$_ENV['SITE_URL'].'";';
+		$data.=PHP_EOL;
+		$data.='var SITE_VERSION="';
+		$data.=$_ENV['SITE_VERSION'].'";'.PHP_EOL;
+		if(file_put_contents($filename,$data)){
+			$msg=$filename.' criado com sucesso!';
+			$msg.=PHP_EOL;
+			print $msg;
+		}else{
+			die("erro ao criar o ".$filename.PHP_EOL);
 		}
 	}
 }
