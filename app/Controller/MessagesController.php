@@ -12,7 +12,7 @@ class MessagesController extends Controller{
             'title'=>$message['message']
         ];
         $this->chaplin('inc/header',$data);
-        $this->chaplin('message',$data);
+        $this->chaplin('messages',$data);
         $this->chaplin('inc/footer',$data);
     }
     function POST(){
@@ -39,7 +39,7 @@ class MessagesController extends Controller{
             'message'=>$message
         ];
         $id=$MessagesModel->create($data);
-        $url=$_ENV['SITE_URL'].'/messages/'.$id;
+        $url=$_ENV['SITE_URL'];
         $this->redirect($url);
     }
 }

@@ -7,6 +7,21 @@
 				<textarea id="message" name="message" maxlength="128" minlength="1" required></textarea>
 				<button type="submit">Enviar</button>
 			</form>
+			<hr>
+			<h2>Mensagens</h2>
+			{{#messages}}
+			<p>
+				{{message}}
+			</p>
+			<p>
+				<small>
+					<a href="{{link_to}}" x-spa>
+						{{created_at_h}}
+					</a>
+				</small>
+			</p>
+			<hr>
+			{{/messages}}
 		</div>
 	</div>
 </div>

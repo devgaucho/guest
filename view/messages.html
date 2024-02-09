@@ -2,14 +2,16 @@
 	<div class="row">
 		<div class="col3"></div>
 		<div class="col6">
-			{{#message}}
-			<p>
-				{{message}}
-			</p>
-			<p>
-				<small>{{created_at_h}}</small>
-			</p>
-			{{/message}}
+			<span class="boxSmall">
+				{{#message}}
+				<p>
+					{{message}}
+				</p>
+				<p>
+					<small>{{created_at_h}}</small>
+				</p>
+				{{/message}}	
+			</span>
 			<p>
 				<a href="javascript:history.back();">
 					Voltar

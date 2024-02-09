@@ -22,11 +22,29 @@ class Model extends DB{
 		$db->insert($this->table,$data);
 		return $db->id();
 	}
+	function linkTo($data){
+		if(isset($data['id'])){
+			$linkTo=$_ENV['SITE_URL'].'/';
+			$linkTo.=$this->table.'/'.$data['id'];
+			$data['link_to']=$linkTo;
+			return $data;
+		}
+		foreach ($data as $key => $value) {
+			$linkTo=$_ENV['SITE_URL'].'/';
+			$linkTo.=$this->table.'/'.$value['id'];
+			$data[$key]['link_to']=$linkTo;
+		}
+		return $data;	
+	}
 	function readAll(){
 		$cols='*';
-		$all=$this->db()->select($this->table,$cols);
+		$where=[
+			'ORDER'=>['id'=>'DESC']
+		];
+		$all=$this->db()->select($this->table,$cols,$where);
 		if($all){
 			$all=$this->dataH($all);
+			$all=$this->linkTo($all);
 		}
 		return $all;
 	}
@@ -37,6 +55,7 @@ class Model extends DB{
 		];
 		$data=$this->db()->get($this->table,$cols,$where);
 		$data=$this->dataH($data);
+		$data=$this->linkTo($data);
 		return $data;
 	}
 }
