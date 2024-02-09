@@ -1,6 +1,6 @@
-# Gaucho
+# Guest
 
-Framework PHP para single-page-application (SPA)
+Guestbook criado para testar o framework [Gaucho](https://github.com/devgaucho/gaucho)
 
 ## Instalação
 
