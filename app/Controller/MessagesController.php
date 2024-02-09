@@ -16,11 +16,29 @@ class MessagesController extends Controller{
         $this->chaplin('inc/footer',$data);
     }
     function POST(){
+        $message=@trim($_POST['message']);
+        // validar a mensagem
+        $len=0;
+        if(is_string($message)){
+            $len=mb_strlen($message);
+        }
+        if($len<1 or $len>128){
+            // mensagem de erro
+            $data=[
+                'title'=>'Mensagem inválida',
+                'msg'=>'A mensagem deve ter entre 1 e 128 caracteres'
+            ];
+            $this->chaplin('inc/header',$data);
+            $this->chaplin('msg',$data);
+            $this->chaplin('inc/footer',$data);
+            die();      
+        }
+        // salvar a mensagem
         $MessagesModel=new MessagesModel();
-        $message=[
-            'message'=>$_POST['message']
+        $data=[
+            'message'=>$message
         ];
-        $id=$MessagesModel->create($message);
+        $id=$MessagesModel->create($data);
         $url=$_ENV['SITE_URL'].'/messages/'.$id;
         $this->redirect($url);
     }

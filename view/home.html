@@ -4,7 +4,7 @@
 		<div class="col6">
 			<form action="{{SITE_URL}}/messages" class="vertical" method="post">
 				<label for="message">Mensagem:</label>
-				<textarea id="message" name="message"></textarea>
+				<textarea id="message" name="message" maxlength="128" minlength="1" required></textarea>
 				<button type="submit">Enviar</button>
 			</form>
 		</div>
