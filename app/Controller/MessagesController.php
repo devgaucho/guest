@@ -8,7 +8,7 @@ class MessagesController extends Controller{
         $id=$this->dir(2);
         $message=$MessagesModel->readById($id);
         $data=[
-            'message'=>$message,
+            'message'=>[$message],
             'title'=>$message['message']
         ];
         $this->chaplin('inc/header',$data);
