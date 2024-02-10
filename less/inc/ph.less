@@ -1,19 +1,27 @@
-.ph .box,
-.ph form,
-.ph h1,
-.ph h2,
-.ph h3,
-.ph p
-{
+.ph *{
+	background: transparent;
+	border:none;
+	color: transparent;
+	cursor: default;
+	line-height: 0;
+	pointer-events: none;
+	resize: none;
+}
+.ph *::selection {
+	color: transparent;
+	background: transparent;
+}
+.ph .box{
 	animation: loading 1s linear infinite alternate;
 	border:1px solid silver;
 	border-radius: 5px;
 	display: block;
 	color: transparent;
+	clear: both;
 	cursor: default;
-}
-.php form textarea{
-	border:none;
+	margin: 0em 0em 1em 0em;
+	min-height: 1em;
+	visibility: visible;
 }
 @keyframes loading{
 	0%{
@@ -25,21 +33,20 @@
 		background-color: silver;
 	}
 }
-.ph *{
-	background: transparent;
-	border:none;
-	color: transparent;
-	resize: none;	
+/*tamanhos*/
+.ph form{
+	height: 5em;
+	width: 100%;
 }
-.ph .boxSmall{
-	height: 3em;
-	width:25%;
-}		
 .ph h1,
-.ph h3,
+.ph h2,
 .ph h3{
-	height: 1em;
+	height: 2em;
 	width:25%;
+}
+.ph hr{
+	display: none;
+	visibility: hidden;
 }
 .ph p{
 	height: 5em;

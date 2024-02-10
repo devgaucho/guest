@@ -2,18 +2,18 @@
 	<div class="row">
 		<div class="col3"></div>
 		<div class="col6">
-			<form action="{{SITE_URL}}/messages" class="vertical" method="post">
+			<form action="{{SITE_URL}}/messages" class="box vertical" method="post">
 				<label for="message">Mensagem:</label>
 				<textarea id="message" name="message" maxlength="128" minlength="1" required></textarea>
 				<button type="submit">Enviar</button>
 			</form>
 			<hr>
-			<h2>Mensagens</h2>
+			<h2 class="box">Mensagens</h2>
 			{{#messages}}
-			<p>
+			<p class="box">
 				{{message}}
 			</p>
-			<p>
+			<p class="box">
 				<small>
 					<a href="{{link_to}}" x-spa>
 						{{created_at_h}}
