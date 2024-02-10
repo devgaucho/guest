@@ -16,6 +16,23 @@ class MessagesController extends Controller{
         $this->chaplin('inc/footer',$data);
     }
     function POST(){
+        // https://www.google.com/recaptcha/admin/create
+        $recaptcha = new \ReCaptcha\ReCaptcha(
+            $_ENV['RECAPTCHA_SECRET_KEY']
+        );
+        $gRecaptchaResponse=$_POST["g-recaptcha-response"];
+        $resp = $recaptcha->verify($gRecaptchaResponse);
+        if (!$resp->isSuccess()) {
+            // mensagem de erro
+            $data=[
+                'title'=>'reCAPTCHA inválido',
+                'msg'=>'Responda o desafio corretamente'
+            ];
+            $this->chaplin('inc/header',$data);
+            $this->chaplin('msg',$data);
+            $this->chaplin('inc/footer',$data);
+            die();      
+        }
         $message=@trim($_POST['message']);
         // validar a mensagem
         $len=0;

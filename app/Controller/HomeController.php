@@ -8,7 +8,8 @@ class HomeController extends Controller{
         $messages=$MessagesModel->readAll();
         $data=[
             'title'=>$_ENV['SITE_NAME'],
-            'messages'=>$messages
+            'messages'=>$messages,
+            'RECAPTCHA_PUBLIC_KEY'=>$_ENV['RECAPTCHA_PUBLIC_KEY']
         ];
         $this->chaplin('inc/header',$data);
         $this->chaplin('home',$data);
