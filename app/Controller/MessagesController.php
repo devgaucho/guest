@@ -2,6 +2,7 @@
 namespace App\Controller;
 use Gaucho\Controller;
 use App\Model\MessagesModel;
+use ReCaptcha\ReCaptcha;
 class MessagesController extends Controller{
     function GET(){
         $MessagesModel=new MessagesModel();
@@ -17,7 +18,8 @@ class MessagesController extends Controller{
     }
     function POST(){
         // https://www.google.com/recaptcha/admin/create
-        $recaptcha = new \ReCaptcha\ReCaptcha(
+        // https://github.com/google/recaptcha 
+        $recaptcha = new ReCaptcha(
             $_ENV['RECAPTCHA_SECRET_KEY']
         );
         $gRecaptchaResponse=$_POST["g-recaptcha-response"];
