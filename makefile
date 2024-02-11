@@ -5,7 +5,7 @@ JS_SOURCES := 	js/inc/jquery.js \
 	js/inc/chaplin.js \
 	js/inc/spa.js \
 	js/script.js
-LESS := 	/usr/local/bin/lessc
+LESS := 	/usr/bin/lessc
 PHP := 		/usr/bin/php
 TERSER := 	/usr/local/bin/terser
 clean:
