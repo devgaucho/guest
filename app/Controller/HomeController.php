@@ -15,4 +15,7 @@ class HomeController extends Controller{
         $this->chaplin('home',$data);
         $this->chaplin('inc/footer',$data);
     }
+    function POST(){
+        $this->redirect($_ENV['SITE_URL']);
+    }
 }
