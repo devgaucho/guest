@@ -1,13 +1,13 @@
-COMPOSER:= 	/usr/bin/composer
+COMPOSER:= 	composer
 JS_SOURCES := 	js/inc/jquery.js \
 	js/inc/rotas.js \
 	js/inc/jquery.js \
 	js/inc/chaplin.js \
 	js/inc/spa.js \
 	js/script.js
-LESS := 	/usr/bin/lessc
-PHP := 		/usr/bin/php
-TERSER := 	/usr/local/bin/terser
+LESS := 	lessc
+PHP := 		php
+TERSER := 	terser
 clean:
 	rm -f public/css/style.css public/js/script.js
 dump:
