@@ -10,6 +10,7 @@ PHP := 		php
 TERSER := 	terser
 clean:
 	rm -f public/css/style.css public/js/script.js
+	touch public/js/script.js
 dump:
 	$(COMPOSER) dump-autoload
 install: dump vendor
