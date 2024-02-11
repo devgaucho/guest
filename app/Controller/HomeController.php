@@ -18,6 +18,6 @@ class HomeController extends Controller{
     }
     function POST(){
         $MessagesController=new MessagesController();
-        $MessagesModel->POST();
+        $MessagesController->POST();
     }
 }
