@@ -1,10 +1,12 @@
 /.buildpath
-/db/
 /.env
 /.idea
-/off
 /.project
 /.settings/
+/db/
+/off
+/public/css/style.css
+/public/js/script.js
 /test*.php
 /todo.txt
 /vendor/
