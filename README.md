@@ -12,10 +12,12 @@ Guestbook criado para testar o framework [Gaucho](https://github.com/devgaucho/g
 wget https://getcomposer.org/download/latest-stable/composer.phar && sudo mv composer.phar /usr/bin/composer && sudo chmod +x /usr/bin/
 ```
 
-#### NPM (arquivos estátivos)
+#### Node 10 & NPM (arquivos estátivos)
 
 ```
-sudo apt install build-essential npm -y && sudo npm -g install clean-css less terser
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install -y nodejs build-essential npm -y
+sudo npm -g install clean-css less terser
 ```
 
 ### Arquivos base

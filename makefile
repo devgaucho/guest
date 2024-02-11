@@ -5,9 +5,9 @@ JS_SOURCES := 	js/inc/jquery.js \
 	js/inc/chaplin.js \
 	js/inc/spa.js \
 	js/script.js
-LESS := 	/usr/local/lib/node_modules/less/bin/lessc
+LESS := 	/usr/local/bin/lessc
 PHP := 		/usr/bin/php
-TERSER := 	/usr/local/lib/node_modules/terser/bin/terser
+TERSER := 	/usr/bin/terser
 clean:
 	rm -f public/css/style.css public/js/script.js
 dump:
