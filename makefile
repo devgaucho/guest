@@ -7,7 +7,7 @@ JS_SOURCES := 	js/inc/jquery.js \
 	js/script.js
 LESS := 	/usr/local/bin/lessc
 PHP := 		/usr/bin/php
-TERSER := 	/usr/bin/terser
+TERSER := 	/usr/local/bin/terser
 clean:
 	rm -f public/css/style.css public/js/script.js
 dump:
