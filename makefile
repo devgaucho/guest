@@ -5,9 +5,9 @@ JS_SOURCES := 	js/inc/jquery.js \
 	js/inc/chaplin.js \
 	js/inc/spa.js \
 	js/script.js
-LESS := 	/usr/bin/lessc
+LESS := 	/usr/local/lib/node_modules/less/bin/lessc
 PHP := 		/usr/bin/php
-UGLIFY := 	/usr/bin/uglifyjs.terser
+TERSER := 	/usr/local/lib/node_modules/terser/bin/terser
 clean:
 	rm -f public/css/style.css public/js/script.js
 dump:
@@ -22,7 +22,7 @@ on:
 public/css/style.css: less/style.less
 	$(LESS) $< $@ --clean-css
 public/js/script.js: $(JS_SOURCES)
-	$(UGLIFY) $^ --output $@ --compress
+	$(TERSER) $^ --output $@ --compress
 pull:
 	git pull origin main
 run:
