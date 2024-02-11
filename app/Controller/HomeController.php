@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 use Gaucho\Controller;
+use App\Controller\MessagesController;
 use App\Model\MessagesModel;
 class HomeController extends Controller{
     function GET(){
@@ -16,6 +17,7 @@ class HomeController extends Controller{
         $this->chaplin('inc/footer',$data);
     }
     function POST(){
-        $this->redirect($_ENV['SITE_URL']);
+        $MessagesController=new MessagesController();
+        $MessagesModel->POST();
     }
 }
