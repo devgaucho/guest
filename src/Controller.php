@@ -44,7 +44,7 @@ class Controller{
 		}
 	}
 	function getNormalUri(){
-		if($this->isSSL()){
+		if($this->isHTTPS()){
 			$scheme='https';
 		}else{
 			$scheme='http';
@@ -88,7 +88,7 @@ class Controller{
 			return false;
 		}
 	}	
-	function isSSL(){
+	function isHTTPS(){
 		// cloudflare
 		if(isset($_SERVER["HTTP_CF_VISITOR"])){
 			$arr=json_decode(
