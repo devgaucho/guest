@@ -4,9 +4,9 @@ Guestbook criado para testar o framework [Gaucho](https://github.com/devgaucho/g
 
 ## Instalação
 
-### Dependências
+### 1) Dependências
 
-#### Composer, Make, Node 10 & NPM (arquivos estáticos)
+#### 1.1) Composer, Make, Node 10 & NPM (arquivos estáticos)
 
 ```
 wget https://getcomposer.org/download/latest-stable/composer.phar
@@ -17,14 +17,26 @@ sudo apt-get install -y nodejs build-essential npm -y
 sudo npm -g install clean-css less terser
 ```
 
-### Arquivos base
+#### 1.2) Configurações (.env)
 
-```bash
-composer create-project gaucho/gaucho <nome do projeto>
+```
+cp .env.example .env && nano .env
 ```
 
-### Arquivos estáticos (SPA)
+### 3) Composer e migrations
+
+```bash
+composer install && make mig
+```
+
+### 4) Arquivos estáticos (SPA)
 
 ```
 make static
+```
+
+### 5) Rodar localmente
+
+```
+make run
 ```
