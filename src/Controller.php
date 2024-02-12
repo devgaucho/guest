@@ -111,7 +111,7 @@ class Controller{
 		}
 		return false;
 	}
-	function isHTTPSCloudFlare(){
+	private function isHTTPSCloudFlare(){
 		$arr=json_decode(
 			$_SERVER["HTTP_CF_VISITOR"],1
 		);
@@ -124,7 +124,7 @@ class Controller{
 			return false;
 		}
 	}
-	function isHTTPSServer(){
+	private function isHTTPSServer(){
 		if ('1'==strtolower($_SERVER['HTTPS'])){
 			return true;
 		}
