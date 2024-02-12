@@ -12,7 +12,7 @@ Guestbook criado para testar o framework [Gaucho](https://github.com/devgaucho/g
 wget https://getcomposer.org/download/latest-stable/composer.phar && sudo mv composer.phar /usr/bin/composer && sudo chmod +x /usr/bin/
 ```
 
-#### Node 10 & NPM (arquivos estáticos)
+#### Make, Node 10 & NPM (arquivos estáticos)
 
 ```
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
