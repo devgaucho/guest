@@ -90,27 +90,18 @@ class Controller{
 	}	
 	function isHTTPS(){
 		// cloudflare
-		if(isset($_SERVER["HTTP_CF_VISITOR"])){
-			$arr=json_decode(
-				$_SERVER["HTTP_CF_VISITOR"],1
-			);
-			if(
-				isset($arr['scheme']) and
-				$arr['scheme']=='https'
-			){
-				return true;
-			}else{
-				return false;
-			}
+		if(
+			isset($_SERVER["HTTP_CF_VISITOR"]) and
+			$this->isHTTPSCloudFlare()
+		){
+			return true;
 		}
 		// server
-		if (isset($_SERVER['HTTPS'])){
-			if ('1'==strtolower($_SERVER['HTTPS'])){
-				return true;
-			}
-			if ('on'==strtolower($_SERVER['HTTPS'])){
-				return true;
-			}			
+		if (
+			isset($_SERVER['HTTPS']) and
+			$this->isHTTPSServer()
+		){
+			return true;
 		}
 		if(
 			isset($_SERVER['SERVER_PORT']) and
@@ -119,6 +110,27 @@ class Controller{
 			return true;
 		}
 		return false;
+	}
+	function isHTTPSCloudFlare(){
+		$arr=json_decode(
+			$_SERVER["HTTP_CF_VISITOR"],1
+		);
+		if(
+			isset($arr['scheme']) and
+			$arr['scheme']=='https'
+		){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	function isHTTPSServer(){
+		if ('1'==strtolower($_SERVER['HTTPS'])){
+			return true;
+		}
+		if ('on'==strtolower($_SERVER['HTTPS'])){
+			return true;
+		}	
 	}
 	function json($mix){
 		header('Content-Type:application/json');
