@@ -44,7 +44,7 @@ class Controller{
 		}
 	}
 	function getNormalUri(){
-		if($_SERVER["SERVER_PORT"]=='443'){
+		if($this->isSSL()){
 			$scheme='https';
 		}else{
 			$scheme='http';
@@ -88,6 +88,38 @@ class Controller{
 			return false;
 		}
 	}	
+	function isSSL(){
+		// cloudflare
+		if(isset($_SERVER["HTTP_CF_VISITOR"])){
+			$arr=json_decode(
+				$_SERVER["HTTP_CF_VISITOR"],1
+			);
+			if(
+				isset($arr['scheme']) and
+				$arr['scheme']=='https'
+			){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		// server
+		if (isset($_SERVER['HTTPS'])){
+			if ('1'==strtolower($_SERVER['HTTPS'])){
+				return true;
+			}
+			if ('on'==strtolower($_SERVER['HTTPS'])){
+				return true;
+			}			
+		}
+		if(
+			isset($_SERVER['SERVER_PORT']) and
+			$_SERVER['SERVER_PORT']=='443'
+		){
+			return true;
+		}
+		return false;
+	}
 	function json($mix){
 		header('Content-Type:application/json');
 		die(json_encode($mix,JSON_PRETTY_PRINT));
