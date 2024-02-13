@@ -1,6 +1,6 @@
 <?php
 namespace App\Controller;
-use Gaucho\Controller;
+use SPA\Controller;
 class AboutController extends Controller{
     function GET(){
         $data=[

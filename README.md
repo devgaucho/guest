@@ -1,6 +1,6 @@
 # Guest
 
-Guestbook criado para testar o framework [Gaucho](https://github.com/devgaucho/gaucho)
+Guestbook criado para testar o framework [SPA](https://github.com/phpspa/spa)
 
 ## Instalação
 

@@ -1,10 +1,10 @@
 <?php
 const ROOT = __DIR__;
 require ROOT . '/vendor/autoload.php';
-use Gaucho\Controller;
-use Gaucho\Gaucho;
+use SPA\Controller;
+use SPA\SPA;
 $Controller=new Controller();
-$Gaucho=new Gaucho();
+$SPA=new SPA();
 if (!$Controller->isCli() and file_exists(ROOT . '/off')){
     http_response_code(503);
     die("maintenance mode");

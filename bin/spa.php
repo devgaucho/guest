@@ -1,8 +1,8 @@
 <?php
-global $Gaucho;
+global $SPA;
 require __DIR__.'/../cfg.php';
-use Gaucho\Route;
-$Gaucho->run();
+use SPA\Route;
+$SPA->run();
 $Route=new Route();
 $rotasEView=$Route->getRotasEViews(ROOT.'/routes.php');
 $filename=ROOT.'/js/inc/rotas.js';

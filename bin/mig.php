@@ -1,7 +1,7 @@
 <?php
-global $Gaucho;
+global $SPA;
 require __DIR__.'/../cfg.php';
-use Gaucho\DB;
-$Gaucho->run();
+use SPA\DB;
+$SPA->run();
 $DB=new DB();
 $DB->mig($_ENV['DB_ID']);

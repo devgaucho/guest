@@ -1,6 +1,6 @@
 <?php
 namespace App\Controller;
-use Gaucho\Controller;
+use SPA\Controller;
 use App\Model\MessagesModel;
 use ReCaptcha\ReCaptcha;
 class MessagesController extends Controller{

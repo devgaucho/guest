@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "381350e82ce6cf1d500c0347b01633df",
+    "content-hash": "abfe44915a052a623fe384c70a41a92b",
     "packages": [
         {
             "name": "catfan/medoo",
@@ -133,6 +133,49 @@
                 "source": "https://github.com/google/recaptcha"
             },
             "time": "2023-02-18T17:41:46+00:00"
+        },
+        {
+            "name": "spa/core",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpspa/core.git",
+                "reference": "72c5b50c93c8e290a64934d8050d042638f6a4c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpspa/core/zipball/72c5b50c93c8e290a64934d8050d042638f6a4c1",
+                "reference": "72c5b50c93c8e290a64934d8050d042638f6a4c1",
+                "shasum": ""
+            },
+            "require": {
+                "catfan/medoo": "^2.1",
+                "ext-mysqli": "*",
+                "ext-pdo": "*",
+                "php": "^8.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SPA\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "devgaucho",
+                    "email": "119246170+devgaucho@users.noreply.github.com"
+                }
+            ],
+            "description": "Single Page Application in PHP",
+            "support": {
+                "issues": "https://github.com/phpspa/core/issues",
+                "source": "https://github.com/phpspa/core/tree/v0.1.1"
+            },
+            "time": "2024-02-13T14:50:04+00:00"
         }
     ],
     "packages-dev": [],

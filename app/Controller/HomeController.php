@@ -1,6 +1,6 @@
 <?php
 namespace App\Controller;
-use Gaucho\Controller;
+use SPA\Controller;
 use App\Model\MessagesModel;
 class HomeController extends Controller{
     function GET(){
